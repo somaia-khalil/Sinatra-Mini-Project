@@ -1,0 +1,36 @@
+<table style="border: 1px solid black"> 
+    <tr>
+        <td><a href="/users">Users</a> | </td>
+        <td><a href="/trees">Trees</a></td>
+    </tr>
+
+</table>
+
+<br/>
+
+<form action="/trees" method="post">
+<input type="text" name="tree[species]" placeholder="enter tree species"/>
+
+<br/>
+
+<label>Users Purchased</label>
+<br/>
+<% @users.each do |user| %>
+    <input type="checkbox" name="users[]" value="<%= user.id%>"/>
+    <%= user.name %>
+    <input type="text" name="age[]" placeholder="Age"/>
+    <input type="text" name="cost[]" placeholder="Cost"/>
+    <br/>
+<% end %>
+<br/>
+<label>Create New User</label>
+<input type="text" name="user[name]" placeholder="enter username"/>
+<input type="text" name="user_tree[age]" placeholder="age"/>
+<input type="text" name="user_tree[cost]" placeholder="cost"/>
+
+
+
+<br/>
+
+<input type="submit" value="Create"/>
+</form>

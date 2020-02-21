@@ -1,0 +1,15 @@
+<table style="border: 1px solid black"> 
+    <tr>
+        <td><a href="/users">Users</a> | </td>
+        <td><a href="/trees">Trees</a></td>
+    </tr>
+
+</table>
+
+<br/>
+
+<form action="/trees/<%= @tree.id %>" method="post">
+<input type="hidden" name="_method" value="patch"/>
+<input type="text" name="tree[species]" value="<%= @tree.species %>"/>
+<input type="submit" value="Submit Changes"/>
+</form>

@@ -1,0 +1,31 @@
+<body style="background-color:lightgreen;">
+
+<table style="border: 1px solid black"> 
+    <tr>
+        <td><a href="/users">Users</a> | </td>
+        <td><a href="/trees">Trees</a></td>
+    </tr>
+
+</table>
+
+<br/>
+
+<ul>
+<label>Trees:</label>
+<% @trees.each do |tree| %>
+<li>
+<a href="/trees/<%= tree.id %>">
+<%= tree.species %>
+</a>
+</li>
+<% end %>
+<br/>
+
+<button>
+<a href="/trees/new">
+Create New Tree
+</a>
+</button>
+<br/>
+
+</body>

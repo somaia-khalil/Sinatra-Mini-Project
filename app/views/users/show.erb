@@ -1,0 +1,41 @@
+<body style="background-color:lightblue;">
+
+<table style="border: 1px solid black"> 
+    <tr>
+        <td><a href="/users">Users</a> | </td>
+        <td><a href="/trees">Trees</a></td>
+    </tr>
+
+</table>
+
+<br/>
+
+<label>User Info:</label>
+<br/>
+<label>Name:</label>
+<h5><%= @user.name %></h5>
+<br/>
+
+
+
+<button>
+<a href="/users/<%= @user.id%>/edit">
+Edit user info
+</a>
+</button>
+
+<form action="/users/<%= @user.id %>" method="post">
+<input type="hidden" name="_method" value="delete"/>
+<input type="submit" value="TERMINATE USER"/>
+</form>
+
+<br/>
+
+<button>
+<a href="/users">
+Back
+</a>
+</button>
+
+</body>
+
